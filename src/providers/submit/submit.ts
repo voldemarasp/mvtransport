@@ -23,7 +23,7 @@ export class SubmitProvider {
     return this.http.post("http://app.valdema.lt/mail/", forma, httpOptions)
     .subscribe(
       data => console.log('pavyko'), // success path
-      error => console.log('error') // error path
+      error => console.log(error) // error path
     )
   }
   

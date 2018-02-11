@@ -15,8 +15,8 @@ export class FormaPage {
   
   constructor( public navCtrl: NavController, public navParams: NavParams, private sumbitProvider: SubmitProvider	) {
     this.selectedDate = navParams.get('date');
-
-    this.form = { 'date': this.selectedDate, 'apikey': '123' };
+    
+    this.form = { 'date': this.selectedDate, 'apikey': '987654321' };
     this.sumbitProvider.getDaysFromProvider().subscribe(
       gautaInfo => { this.availableDays = gautaInfo },
       err => { console.log(err) }
@@ -25,6 +25,10 @@ export class FormaPage {
   
   ionViewDidLoad() {
     // console.log('ionViewDidLoad FormaPage');
+  }
+
+  goBack() {
+    this.navCtrl.pop();
   }
   
   formSubmit() {
