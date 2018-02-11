@@ -32,13 +32,4 @@ export class FormaPage {
     console.log(this.form);
   }
   
-  // getDays() {
-  //   this.sumbitProvider.getDaysFromProvider()
-  //   .subscribe(
-  //     res => this.availableDays = res, // success path
-  //     error => console.log('error'), // error path,
-  //     () => console.log(this.availableDays)
-  //   );
-  // }
-  
 }
