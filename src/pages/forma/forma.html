@@ -1,78 +1,72 @@
 <ion-header>
-<img src="http://mvtransport.lt/wp-content/themes/mvtransport/img/lt.png">
+  <img src="http://mvtransport.lt/wp-content/themes/mvtransport/img/lt.png">
 </ion-header>
 
 
 <ion-content padding>
 
-<form (ngSubmit)="formSubmit()" method="post">
-		<h2 text-center>SIUNTĖJAS</h2>
-		<ion-list>
-			<ion-item>
-				<ion-label floating>Vardas Pavardė *</ion-label>
-				<ion-input type="text" value="" [(ngModel)]="form.subject" name="subject"></ion-input>
-			</ion-item>
-			
-			<ion-item>
-				<ion-label floating>El. paštas *</ion-label>
-				<ion-input type="email" value="" [(ngModel)]="form.to" name="to"></ion-input>
-			</ion-item>
-			
-			<ion-item>
-				<ion-label floating>Telefono numeris</ion-label>
-				<ion-input type="tel" value="" [(ngModel)]="form.phone" name="phone"></ion-input>
-			</ion-item>
-			
-			<ion-item>
-				<ion-label floating>Adresas</ion-label>
-				<ion-input type="text" value="" [(ngModel)]="form.address" name="address"></ion-input>
-			</ion-item>
-			
-			<ion-item>
-				<ion-label floating>Siuntinio svoris (kg)</ion-label>
-				<ion-input type="number" value="" min="0" [(ngModel)]="form.weight" name="weight"></ion-input>
-			</ion-item>
-			
-		</ion-list>
-		
-		<h2 text-center>GAVĖJAS</h2>
-		<ion-list>
-			<ion-item>
-				<ion-label floating>Vardas Pavardė *</ion-label>
-				<ion-input type="text" value="" [(ngModel)]="form.receiverName" name="receiverName"></ion-input>
-			</ion-item>
-			
-			<ion-item>
-				<ion-label floating>El. paštas *</ion-label>
-				<ion-input type="email" value="" [(ngModel)]="form.receiverEmail" name="receiverEmail"></ion-input>
-			</ion-item>
-			
-			<ion-item>
-				<ion-label floating>Telefono numeris</ion-label>
-				<ion-input type="tel" value="" [(ngModel)]="form.receiverPhone" name="receiverPhone"></ion-input>
-			</ion-item>
-			
-			<ion-item>
-				<ion-label floating>Adresas</ion-label>
-				<ion-input type="text" value="" [(ngModel)]="form.receiverAddress" name="receiverAddress"></ion-input>
-			</ion-item>
-			
-			<ion-item>
-				<ion-label floating>Komentarai</ion-label>
-				<ion-textarea type="text" value="" [(ngModel)]="form.message" name="message"></ion-textarea>
-			</ion-item>
-			<ion-list radio-group>
-				<ion-list-header>Datos</ion-list-header>
-				
-				<ion-item>
-					<ion-input type="text" value="{{ date }}" [(ngModel)]="form.date" name="receiverAddress"></ion-input>
-				</ion-item>
-				
-			</ion-list>
-		</ion-list>
-		
-		<button ion-button color="primary" type="submit" block>Submit</button>
-		
-</form>
+  <form (ngSubmit)="formSubmit()" method="post">
+    <h3 text-center>Pasirinkta data: {{ selectedDate }} </h3>
+    <h2 text-center>SIUNTĖJAS</h2>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Vardas Pavardė *</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="form.subject" name="subject"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>El. paštas *</ion-label>
+        <ion-input type="email" value="" [(ngModel)]="form.to" name="to"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Telefono numeris</ion-label>
+        <ion-input type="tel" value="" [(ngModel)]="form.phone" name="phone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Adresas</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="form.address" name="address"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Siuntinio svoris (kg)</ion-label>
+        <ion-input type="number" value="" min="0" [(ngModel)]="form.weight" name="weight"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <h2 text-center>GAVĖJAS</h2>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Vardas Pavardė *</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="form.receiverName" name="receiverName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>El. paštas *</ion-label>
+        <ion-input type="email" value="" [(ngModel)]="form.receiverEmail" name="receiverEmail"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Telefono numeris</ion-label>
+        <ion-input type="tel" value="" [(ngModel)]="form.receiverPhone" name="receiverPhone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Adresas</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="form.receiverAddress" name="receiverAddress"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Komentarai</ion-label>
+        <ion-textarea type="text" value="" [(ngModel)]="form.message" name="message"></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+
+    <button ion-button color="primary" type="submit" block>Submit</button>
+
+  </form>
 
 </ion-content>
