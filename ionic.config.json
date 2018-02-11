@@ -1,0 +1,8 @@
+{
+  "name": "MVTransport",
+  "app_id": "509bf06b",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
