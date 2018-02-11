@@ -13,7 +13,7 @@
 	</div>
 	<div class="dienos">
 		<div *ngFor="let date of pirmasI" class="dienosLangelis">
-			<button ion-button (click)="pushPage()">{{ date.reisas }}</button>
+			<button ion-button (click)="pushPage(date.reisas, 1)">{{ date.reisas }}</button>
 		</div>
 	</div>
 	<div class="menesis">
@@ -21,7 +21,7 @@
 	</div>
 	<div class="dienos">
 		<div *ngFor="let date of antrasI" class="dienosLangelis">
-			<button ion-button (click)="pushPage()">{{ date.reisas }}</button>
+			<button ion-button (click)="pushPage(date.reisas, 1)">{{ date.reisas }}</button>
 		</div>
 	</div>
 	
@@ -35,7 +35,7 @@
 	</div>
 	<div class="dienos">
 		<div *ngFor="let date of pirmasIS" class="dienosLangelis">
-			<button ion-button (click)="pushPage()">{{ date.reisas }}</button>
+			<button ion-button (click)="pushPage(date.reisas, 2)">{{ date.reisas }}</button>
 		</div>
 	</div>
 	<div class="menesis">
@@ -43,7 +43,7 @@
 	</div>
 	<div class="dienos">
 		<div *ngFor="let date of antrasIS" class="dienosLangelis">
-			<button ion-button (click)="pushPage()">{{ date.reisas }}</button>
+			<button ion-button (click)="pushPage(date.reisas, 2)">{{ date.reisas }}</button>
 		</div>
 	</div>
 </ion-content>

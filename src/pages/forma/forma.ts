@@ -11,11 +11,11 @@ import { SubmitProvider } from '../../providers/submit/submit';
 export class FormaPage {
   form = {};
   availableDays: any;
-  
   selectedDate: string;
   
   constructor( public navCtrl: NavController, public navParams: NavParams, private sumbitProvider: SubmitProvider	) {
     this.selectedDate = navParams.get('date');
+
     this.form = { 'date': this.selectedDate };
     this.sumbitProvider.getDaysFromProvider().subscribe(
       gautaInfo => { this.availableDays = gautaInfo },

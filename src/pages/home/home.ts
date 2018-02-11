@@ -30,9 +30,9 @@ export class HomePage {
 
   }
   
-	pushPage(){
+	pushPage(daySelected, month){
     this.navCtrl.push(FormaPage, {
-      date: "2018.05.15"
+      date: month + "/" + daySelected
     });
   }
 }
