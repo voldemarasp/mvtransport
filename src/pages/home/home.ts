@@ -8,7 +8,7 @@ import { SubmitProvider } from '../../providers/submit/submit';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  // availableDays: any;
+
   pirmasI: any;
   pirmasIS: any;
   antrasI: any;
@@ -23,11 +23,8 @@ export class HomePage {
         this.antrasI = res['antrasI'], 
         this.antrasIS = res['antrasIS']
       ), // success path
-      error => console.log('error'), // error path,
-      () => (console.log(this.pirmasI))
+      error => console.log('error') // error path,
     );
-    // this.pirmasI = this.availableDays['pirmasI'];
-
   }
   
 	pushPage(daySelected, month){
