@@ -29,10 +29,11 @@ strong {
 }
 
 .dienosLangelis {
-	width: 14%;
+	width: 13%;
 	height: 36px;
 	float:left;
-	outline: 1px solid #d6d6d6;
+	padding-left:3px;
+	padding-right: 3px;
 }
 
 .homeTitle {
@@ -48,4 +49,12 @@ strong {
 .menesis p {
 	margin-bottom: 1rem;
 	margin-top: 1rem;
+}
+
+.raudonas {
+	background-color: red;
+}
+
+button {
+	border: 1px solid white;
 }
