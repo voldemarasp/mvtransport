@@ -4,15 +4,25 @@
 
 
 <ion-content padding>
-
-  <form (ngSubmit)="formSubmit()" method="post">
+<h1>{{formResult}}</h1>
+  <form (ngSubmit)="formSubmit()" method="post" #form="ngForm">
     <h3 text-center>Pasirinkta data: {{ selectedDate }} </h3>
     <h2 text-center>SIUNTĖJAS</h2>
     <ion-list>
       <ion-item>
         <ion-label floating>Vardas Pavardė *</ion-label>
-        <ion-input type="text" value="" [(ngModel)]="form.subject" name="subject"></ion-input>
+        <ion-input type="text" value="" required minlength="4" [(ngModel)]="form.subject" name="subject" #subject="ngModel"></ion-input>
       </ion-item>
+      <div *ngIf="subject.invalid && (subject.dirty || subject.touched)" class="alert alert-danger">
+
+        <div *ngIf="subject.errors.required">
+          Subject is required.
+        </div>
+        <div *ngIf="subject.errors.minlength">
+          Subject must be at least 4 characters long.
+        </div>
+
+      </div>
 
       <ion-item>
         <ion-label floating>El. paštas *</ion-label>
@@ -31,7 +41,7 @@
 
       <ion-item>
         <ion-label floating>Siuntinio svoris (kg)</ion-label>
-        <ion-input type="number" value="" min="0" [(ngModel)]="form.weight" name="weight"></ion-input>
+        <ion-input type="number" value=""  min="0" [(ngModel)]="form.weight" name="weight"></ion-input>
       </ion-item>
 
     </ion-list>
@@ -40,12 +50,12 @@
     <ion-list>
       <ion-item>
         <ion-label floating>Vardas Pavardė *</ion-label>
-        <ion-input type="text" value="" [(ngModel)]="form.receiverName" name="receiverName"></ion-input>
+        <ion-input type="text" value=""  [(ngModel)]="form.receiverName" name="receiverName"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>El. paštas *</ion-label>
-        <ion-input type="email" value="" [(ngModel)]="form.receiverEmail" name="receiverEmail"></ion-input>
+        <ion-input type="email" value=""  [(ngModel)]="form.receiverEmail" name="receiverEmail"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -55,7 +65,7 @@
 
       <ion-item>
         <ion-label floating>Adresas</ion-label>
-        <ion-input type="text" value="" [(ngModel)]="form.receiverAddress" name="receiverAddress"></ion-input>
+        <ion-input type="text" value=""  [(ngModel)]="form.receiverAddress" name="receiverAddress"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -65,7 +75,8 @@
 
     </ion-list>
 
-    <button ion-button color="primary" type="submit" block>Submit</button>
+    <button ion-button color="primary" type="submit" block [disabled]="!form.form.valid">Submit</button>
+    <div *ngIf="formSent">Form sent</div>
 
   </form>
 

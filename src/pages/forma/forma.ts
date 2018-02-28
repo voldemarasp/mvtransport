@@ -10,30 +10,33 @@ import { SubmitProvider } from '../../providers/submit/submit';
 })
 export class FormaPage {
   form = {};
+  formSent: boolean;
   availableDays: any;
   selectedDate: string;
   
-  constructor( public navCtrl: NavController, public navParams: NavParams, private sumbitProvider: SubmitProvider	) {
+  constructor( public navCtrl: NavController, public navParams: NavParams, private submitProvider: SubmitProvider	) {
     this.selectedDate = navParams.get('date');
     
     this.form = { 'date': this.selectedDate, 'apikey': '987654321' };
-    this.sumbitProvider.getDaysFromProvider().subscribe(
+    this.submitProvider.getDaysFromProvider().subscribe(
       gautaInfo => { this.availableDays = gautaInfo },
       err => { console.log(err) }
     );
+
+    this.formSent = false;
   }
   
   ionViewDidLoad() {
     // console.log('ionViewDidLoad FormaPage');
   }
-
+  
   goBack() {
     this.navCtrl.pop();
   }
   
   formSubmit() {
-    this.sumbitProvider.sendByPost(this.form);
-    console.log(this.form);
+    this.submitProvider.sendByPost(this.form).then(
+      res => (this.formSent = true, console.log('form is sent'))
+    );
   }
-  
 }
